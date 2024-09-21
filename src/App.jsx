@@ -9,20 +9,24 @@ function App() {
   }
 
   const decrement = () => {
-    setCount(count - 1)
+    if (count > 0) {
+      setCount(count - 1)
+    } else {
+      setCount(0)
+    }
   }
-
+  
   const Reset = () => {
     setCount(0)
     setIsActive(false)
   }
 
 
-  useEffect(() => {
-    setTimeout(() => {
-      setCount(count + 1)
-    },1100)
-  },[count])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setCount(count + 1)
+  //   },1100)
+  // },[count])
 
 
   return (
